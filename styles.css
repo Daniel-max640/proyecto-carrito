@@ -74,7 +74,6 @@ body {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     background-color: white; /* Color de fondo */
     display: none;
-
     max-height: 80%; /* Establece la altura máxima del contenedor */
     overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
 }
@@ -97,6 +96,17 @@ body {
     margin-right: 10px; /* Agregar espacio entre la imagen y el texto */
 }
 
+/* Estilos para el contenedor del total a pagar */
+.total-section {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: auto; /* Empuja el total-section hacia abajo */
+    position: sticky;
+    bottom: 0;
+   
+}
 /* Estilos para los detalles del producto en la tarjeta */
 .product-details {
     padding: 0.5rem;
@@ -221,12 +231,14 @@ body {
   background-color: #EB4A5A;
   color: white;
   border: none;
+  display: flex;
   padding: 5px 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 0.8rem;
   margin-top: auto; /* Empuja el botón hacia abajo */
   align-self: center; /* Centra horizontalmente el botón */
+  border-radius: 5px;;
 }
 
 .product button:hover {
@@ -262,14 +274,16 @@ body {
 }
 
 .modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
     position: absolute;
-    top: 50%; /* Centrar verticalmente */
-    left: 50%; /* Centrar horizontalmente */
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
+    max-width: 80%;
+    max-height: 80%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
 }
 
 .close-modal {
@@ -323,6 +337,7 @@ body {
     transition: background-color 0.3s ease;
     float: left; /* Alinea el botón a la derecha */
     margin-top: 10px; /* Agrega un pequeño margen superior */
+    
 }
 
 #add-to-cart:hover {
@@ -340,12 +355,7 @@ body {
     z-index: 2; /* Asegura que esté por encima de otros elementos */
 }
 
-.cart-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
+y
 /* Estilos para los botones de cantidad */
 .quantity-button {
     font-size: 1rem;
@@ -360,12 +370,49 @@ body {
 /* Estilos para el input de cantidad */
 .product-quantity-input {
     width: 40px;
+    
     padding: 0.2rem;
     font-size: 1rem;
     border: 1px  #ccc;
     text-align: center;
 }
 
+/* Estilos para el botón de eliminación */
+.delete-button {
+    background-color: #EB4A5A;
+    margin: 10px;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .delete-button:hover {
+    background-color: #e60000;
+  }
+  
+  /* Estilos para el ícono de tacho de basura */
+  .delete-icon {
+    margin-right: px;
+  }
+
+  .purchase-button {
+    background-color: #3498db; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s ease; /* Transición suave de color de fondo */
+}
+
+.purchase-button:hover {
+    background-color: #2980b9; /* Color de fondo cuando se pasa el cursor */
+}
+ 
 
 @media (max-width: 768px) {
     .contenedor-elementos {
@@ -401,4 +448,10 @@ body {
         justify-content: center; /* Centra los elementos horizontalmente */
     }
 
+    .modal-content {
+        max-width: 90%;
+    }
+
+
+    
 }
